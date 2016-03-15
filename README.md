@@ -37,4 +37,9 @@ ngx_mrubyとopenrestyはDocker上で動かして、Redisとproxy先のサーバ�
 ```zsh
 % cat /etc/redis/redis.conf | grep '^bind'
 bind 127.0.0.1 172.17.0.1
+% redis-cli
+127.0.0.1:6379> set taro 172.17.0.1:12340
+OK
+127.0.0.1:6379> get taro
+"172.17.0.1:12340"
 ```
