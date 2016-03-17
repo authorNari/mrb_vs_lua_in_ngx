@@ -14,6 +14,7 @@ Nginx.return -> do
   if upstream
     v.set "upstream", upstream
     Nginx.echo "Success"
+    return Nginx::HTTP_OK
   else
     Nginx.errlogger Nginx::LOG_ERR, "upstream not found: user=<#{user}>"
     return Nginx::HTTP_UNAUTHORIZED
