@@ -19,7 +19,7 @@ if res == nil then
   return ngx.exit(401)
 end
 
-local ok, err = red:set_keepalive(10000, 100)
+local ok, err = red:set_keepalive(10000, 2000)
 if not ok then
   ngx.say("failed to set keepalive: ", err)
   return
